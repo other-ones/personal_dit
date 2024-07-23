@@ -1,6 +1,6 @@
 python train_net.py \
 --config-file configs/maskrcnn/maskrcnn_dit_large_c6.yaml \
---num-gpus 3 MODEL.WEIGHTS \
+--num-gpus 2 MODEL.WEIGHTS \
 ../weights/dit-large-224-p16-500k-d7a2fb.pth OUTPUT_DIR outputs/maskrcnn_dit_large_c6
 
 python train_net.py \

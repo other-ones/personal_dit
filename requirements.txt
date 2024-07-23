@@ -12,3 +12,6 @@ tensorboardX
 deepspeed==0.4.0
 scipy
 opencv-python
+scikit-learn
+setuptools==59.5.0
+numpy==1.21
