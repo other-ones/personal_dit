@@ -2,4 +2,5 @@
 detectron2
 doclaynet_data
 outputs
-weights
+weights/*
+object_detection/doclaynet_data
