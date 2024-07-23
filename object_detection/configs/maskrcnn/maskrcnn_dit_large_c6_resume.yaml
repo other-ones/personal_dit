@@ -1,0 +1,22 @@
+_BASE_: "../Base-RCNN-FPN_c6.yaml"
+MODEL:
+  PIXEL_MEAN: [ 127.5, 127.5, 127.5 ]
+  PIXEL_STD: [ 127.5, 127.5, 127.5 ]
+  WEIGHTS: "outputs/maskrcnn_dit_large"
+  VIT:
+    NAME: "dit_large_patch16"
+    OUT_FEATURES: [ "layer7", "layer11", "layer15", "layer23" ]
+    DROP_PATH: 0.2
+  FPN:
+    IN_FEATURES: [ "layer7", "layer11", "layer15", "layer23" ]
+SOLVER:
+  WARMUP_ITERS: 1000
+  IMS_PER_BATCH: 6
+  MAX_ITER: 160000
+  CHECKPOINT_PERIOD: 2000
+  BASE_LR: 0.0001
+  AMP:
+    ENABLED: False
+TEST:
+  EVAL_PERIOD: 2000
+OUTPUT_DIR: "outputs/maskrcnn_dit_large"
